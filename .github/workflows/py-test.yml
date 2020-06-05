@@ -30,3 +30,10 @@ jobs:
     - name: Test with pyTest
       run: |
         python flask_unittest.py
+    - name: Run on failure
+      if: failure()
+      run: |
+        echo "Test failed"
+    - name: Test Passed
+      run: |
+        echo "Test passed"  
